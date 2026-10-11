@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在跳转...</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f7;
+            color: #333;
+        }
+        .loading-box { text-align: center; }
+        .spinner {
+            border: 4px solid rgba(0,0,0,.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #0071e3;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="loading-box">
+        <div class="spinner"></div>
+        <p>正在为您安全跳转，请稍候...</p>
+    </div>
+
+    <script>
+        // 🛠 在这里配置你的跳转网址（请务必保留双引号）
+        var phoneUrl = "https://www.pqdn8r.vip:6002/entry/register17144/?i_code=97666368"; 
+        var pcUrl    = "https://www.mk2033.com:8663/register17144/?i_code=97666368";
+
+        // 🧠 核心逻辑：精准识别当前访问设备是否为手机/平板
+        function redirect() {
+            var userAgent = navigator.userAgent.toLowerCase();
+            var isMobile = /ipad|iphone|ipod|android|windows phone|blackberry|webos|mobile/i.test(userAgent);
+            
+            if (isMobile) {
+                // 如果是手机端（H5），跳转到手机网址
+                window.location.href = phoneUrl;
+            } else {
+                // 如果是电脑端（PC），跳转到电脑网址
+                window.location.href = pcUrl;
+            }
+        }
+
+        // 立即执行跳转
+        redirect();
+    </script>
+</body>
+</html>
